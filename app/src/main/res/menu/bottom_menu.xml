@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_airplane"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_euro_24"
+        android:title="Home"/>
+
+    <item
+        android:id="@+id/action_dialpad"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_dialpad_24"
+        android:title="지도"/>
+
+    <item
+        android:id="@+id/action_family"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_family_restroom_24"
+        android:title="게시판"/>
+
+    <item
+        android:id="@+id/action_eco"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_eco_24"
+        android:title="몰라"/>
+
+    <item
+        android:id="@+id/action_radio"
+        android:enabled="true"
+        android:icon="@android:drawable/btn_radio"
+        android:title="고객센터"/>
+
+</menu>
