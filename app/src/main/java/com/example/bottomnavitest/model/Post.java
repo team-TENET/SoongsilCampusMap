@@ -4,8 +4,10 @@ import java.util.Date;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 public class Post {
     private String title;
@@ -14,13 +16,14 @@ public class Post {
     private int commentNum;
     private long viewCount;
     private long userId;
+
     public Post(long userId, String title, String subject){
         this.userId = userId;
         this.title = title;
         this.subject = subject;
         this.commentNum = 0;
         this.viewCount = 0;
-        this.createdDate = getCreatedDate();
+        this.createdDate = new Date();
     }
 
 }
