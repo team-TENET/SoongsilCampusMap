@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ public class Frag2 extends Fragment {
     //객체선언
     EditText ed_title;
     EditText ed_subject;
+    TextView ed_result;
     Button btnSend;
 
     @Nullable
@@ -33,6 +35,7 @@ public class Frag2 extends Fragment {
         btnSend = (Button)view.findViewById(R.id.btn_sendData);
         ed_title = (EditText)view.findViewById(R.id.et_message);
         ed_subject = (EditText)view.findViewById(R.id.et_message);
+        ed_result = (TextView)view.findViewById(R.id.tv_recvData);
 
         btnSend.setOnClickListener(this::onClick);
         context = container.getContext();
@@ -50,8 +53,9 @@ public class Frag2 extends Fragment {
                 String title = ed_title.getText().toString();
                 String subject = ed_subject.getText().toString();
                 Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
+                ed_result.setText(subject);
                 //일단 테스트중. 서버접속해서 보내는거까지 하고싶음.
-                PostService.writePost("http://localhost:8080/", new Post());
+                //PostService.writePost("http://localhost:8080/", new Post());
 
             }
         }
