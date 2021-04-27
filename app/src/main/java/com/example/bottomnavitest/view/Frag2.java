@@ -55,7 +55,8 @@ public class Frag2 extends Fragment {
                 Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
                 ed_result.setText(subject);
                 //일단 테스트중. 서버접속해서 보내는거까지 하고싶음.
-                //PostService.writePost("http://localhost:8080/", new Post());
+                String sentresult = PostService.writePost("http://127.0.0.1:8080/boards/1/posts", new Post(1, title, subject));
+                Toast.makeText(context, sentresult, Toast.LENGTH_SHORT).show();
 
             }
         }
