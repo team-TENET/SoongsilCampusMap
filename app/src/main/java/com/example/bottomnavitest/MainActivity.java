@@ -13,7 +13,6 @@ import com.example.bottomnavitest.view.Frag1;
 import com.example.bottomnavitest.view.Frag2;
 import com.example.bottomnavitest.view.Frag3;
 import com.example.bottomnavitest.view.Frag4;
-import com.example.bottomnavitest.view.Frag5;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private Frag2 frag2;
     private Frag3 frag3;
     private Frag4 frag4;
-    private Frag5 frag5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,9 +49,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_eco:
                         setFrag(3);
                         break;
-                    case R.id.action_radio:
-                        setFrag(4);
-                        break;
                 }
                 return true;
             }
@@ -62,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         frag2 = new Frag2();
         frag3 = new Frag3();
         frag4 = new Frag4();
-        frag5 = new Frag5();
 
         //첫 Fragment화면을 지정해주는것을 선택.
         setFrag(0);
@@ -90,11 +84,6 @@ public class MainActivity extends AppCompatActivity {
                 ft.replace(R.id.main_frame, frag4);
                 ft.commit();
                 break;
-            case 4:
-                ft.replace(R.id.main_frame, frag5);
-                ft.commit();
-                break;
-
         }
 
     }

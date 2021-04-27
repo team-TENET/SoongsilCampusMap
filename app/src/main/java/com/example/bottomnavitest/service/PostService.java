@@ -1,6 +1,7 @@
 package com.example.bottomnavitest.service;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.bottomnavitest.model.Post;
 
@@ -24,7 +25,6 @@ public class PostService {
         try{
             java.net.URL urlCon = new URL(url);
             HttpURLConnection httpCon = (HttpURLConnection)urlCon.openConnection();
-            Post post2 = new Post();
             //JSON Build
             JSONObject jsonTest = new JSONObject();
             jsonTest.accumulate("userId", post.getUserId());
@@ -39,7 +39,7 @@ public class PostService {
             httpCon.setDoOutput(true);
             // InputStream으로 서버로 부터 응답을 받겠다는 옵션.
             httpCon.setDoInput(true);
-
+            result=json;
             OutputStream os = httpCon.getOutputStream();
             os.write(json.getBytes("euc-kr"));
             os.flush();
@@ -48,11 +48,12 @@ public class PostService {
                 is = httpCon.getInputStream();
                 // convert inputstream to string
                 if(is != null) {
-                    result = "Worked!";
+                    result += "Worked!";
+
                     //result = convertInputStreamToString(is);
                 }
                 else
-                    result = "Did not work!";
+                    result += "Did not work!";
             }
             catch (IOException e) {
                 e.printStackTrace();
