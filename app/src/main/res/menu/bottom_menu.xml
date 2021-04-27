@@ -22,12 +22,6 @@
         android:id="@+id/action_eco"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_eco_24"
-        android:title="몰라"/>
-
-    <item
-        android:id="@+id/action_radio"
-        android:enabled="true"
-        android:icon="@android:drawable/btn_radio"
         android:title="고객센터"/>
 
 </menu>
