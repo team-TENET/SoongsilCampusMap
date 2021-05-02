@@ -64,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
         frag2 = new Frag2();
         frag3 = new Frag3();
         frag4 = new Frag4();
+
+        //NavigationBar 작업한것. ivMenu = 햄버거 버튼. 클릭시 Drawer가 열리게 작동함. NavigationBar는 공통.(모든 Fragment에서 사용가능)
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
         drawerView = (View)findViewById(R.id.drawer);
         ivMenu = findViewById(R.id.iv_menu);
