@@ -2,12 +2,18 @@ package com.example.bottomnavitest;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toolbar;
 
 import com.example.bottomnavitest.view.Frag1;
 import com.example.bottomnavitest.view.Frag2;
@@ -16,8 +22,9 @@ import com.example.bottomnavitest.view.Frag4;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private View drawerView;
     private BottomNavigationView bottomNavigationView; // 하단바.
     private FragmentManager fm;
     private FragmentTransaction ft;
@@ -25,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private Frag2 frag2;
     private Frag3 frag3;
     private Frag4 frag4;
-
+    private ImageView ivMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +65,18 @@ public class MainActivity extends AppCompatActivity {
         frag3 = new Frag3();
         frag4 = new Frag4();
 
+        //NavigationBar 작업한것. ivMenu = 햄버거 버튼. 클릭시 Drawer가 열리게 작동함. NavigationBar는 공통.(모든 Fragment에서 사용가능)
+        drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        drawerView = (View)findViewById(R.id.drawer);
+        ivMenu = findViewById(R.id.iv_menu);
+
+        ivMenu.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
         //첫 Fragment화면을 지정해주는것을 선택.
         setFrag(0);
     }
@@ -86,5 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+    }
+    public void showDrawer(){
+        drawerLayout.closeDrawers();
     }
 }
