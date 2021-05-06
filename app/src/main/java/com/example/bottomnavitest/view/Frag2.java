@@ -17,8 +17,16 @@ import androidx.fragment.app.Fragment;
 import com.example.bottomnavitest.R;
 import com.example.bottomnavitest.model.Post;
 import com.example.bottomnavitest.service.PostService;
+import android.os.Bundle;
+import android.view.ViewGroup;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class Frag2 extends Fragment {
+import net.daum.mf.map.api.MapPOIItem;
+import net.daum.mf.map.api.MapPoint;
+import net.daum.mf.map.api.MapReverseGeoCoder;
+import net.daum.mf.map.api.MapView;
+
+public class Frag2 extends Fragment{
     private View view;
     private Context context;
     //객체선언
@@ -31,34 +39,32 @@ public class Frag2 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //선언한 객체를 onCreateView에 보여주게 함.
-        view = inflater.inflate(R.layout.frag2, container, false);
-        btnSend = (Button)view.findViewById(R.id.btn_sendData);
-        ed_title = (EditText)view.findViewById(R.id.et_message);
-        ed_subject = (EditText)view.findViewById(R.id.et_message);
-        ed_result = (TextView)view.findViewById(R.id.tv_recvData);
+        View v = inflater.inflate(R.layout.frag2, container, false);
 
-        btnSend.setOnClickListener(this::onClick);
-        context = container.getContext();
-        return view;
+        //지도
+        MapView mapView = new MapView(getActivity());
+        ViewGroup mapViewContainer = (ViewGroup) v.findViewById(R.id.map_view);
+        mapViewContainer.addView(mapView);
+        /*
+        // 중심점 변경 - 예제 좌표는 서울 남산
+        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.54892296550104, 126.99089033876304), true);
+
+        // 줌 레벨 변경
+        mapView.setZoomLevel(4, true);
+
+        //마커 찍기
+        MapPoint MARKER_POINT = MapPoint.mapPointWithGeoCoord(37.54892296550104, 126.99089033876304);
+        MapPOIItem marker = new MapPOIItem();
+        marker.setItemName("Default Marker");
+        marker.setTag(0);
+        marker.setMapPoint(MARKER_POINT);
+        marker.setMarkerType(MapPOIItem.MarkerType.BluePin); // 기본으로 제공하는 BluePin 마커 모양.
+        marker.setSelectedMarkerType(MapPOIItem.MarkerType.RedPin); // 마커를 클릭했을때, 기본으로 제공하는 RedPin 마커 모양.
+
+        mapView.addPOIItem(marker);
+        */
+        return v;
     }
 
-    public void onClick(View v){
-        //눌렀을때 가정.
-        switch(v.getId()){
 
-            //버튼 클릭 시.
-            case R.id.btn_sendData:
-            {
-                //Edittext를 String으로 변환해서 Toast하게 함.
-                String title = ed_title.getText().toString();
-                String subject = ed_subject.getText().toString();
-                Toast.makeText(context, title, Toast.LENGTH_SHORT).show();
-                ed_result.setText(subject);
-                //일단 테스트중. 서버접속해서 보내는거까지 하고싶음.
-                String sentresult = PostService.writePost("http://127.0.0.1:8080/boards/1/posts", new Post(1, title, subject));
-                Toast.makeText(context, sentresult, Toast.LENGTH_SHORT).show();
-
-            }
-        }
-    }
 }

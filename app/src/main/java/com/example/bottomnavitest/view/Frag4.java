@@ -31,7 +31,7 @@ public class Frag4 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //선언한 객체를 onCreateView에 보여주게 함.
-        view = inflater.inflate(R.layout.frag2, container, false);
+        view = inflater.inflate(R.layout.frag4, container, false);
         btnSend = (Button)view.findViewById(R.id.btn_sendData);
         ed_title = (EditText)view.findViewById(R.id.et_message);
         ed_subject = (EditText)view.findViewById(R.id.et_message);
