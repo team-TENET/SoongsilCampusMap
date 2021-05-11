@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <head>
     <meta charset= 'utf-8'/>
-    <title>Soongsil Campus Map - 정보게시판 </title>
+    <title>Soongsil Campus Map - 검색하기</title>
     <link rel="stylesheet" href="../css/common.css"/>
-    <link rel="stylesheet" href="../css/infoBoard.css"/>
+    <link rel="stylesheet" href="../css/search.css"/>
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="../script/common.js"></script>
-    <script src="../script/infoBoard.js"></script>
+    <script src="../script/search.js"></script>
 </head>
 <body>
     <div class="screenLimit">
-        <div class="header">
-            <i class="fas fa-bars menuIcon fa-lg"></i>
-            <h class="title titleType2">정보게시판</h>
-            <img id="infoBoardSearchIcon" class="searchIcon" src="../image/searchIcon.png" alt="searchIcon" value="infoBoard"/>
-            <img id="infoBoardWriteIcon" class="writeIcon" src="../image/writeIcon.png" alt="writeIcon" value="infoBoard"/>
-
+        <div id="searchTextDiv">
+            <i id="backIcon" class="fas fa-arrow-left fa-lg"></i>
+            <input type="text" id="searchTextInput" placeholder="검색어를 입력하세요">
+            <i id="searchIcon" class="fas fa-search fa-lg"></i>
         </div>
         <div class="content">
             <ul class="boardRealList">
@@ -102,6 +100,6 @@
             <img id="mapIcon" class="moveIcon" src="../image/mapIcon.png" alt="mapIcon"/>
             <img id="infoBoardIcon" class="moveIcon" src="../image/infoBoardIcon.png" alt="infoBoardIcon"/>
             <img id="freeBoardIcon" class="moveIcon" src="../image/freeBoardIcon.png" alt="freeBoardIcon"/>
-    </div>
+        </div>
     </div>
 </body>

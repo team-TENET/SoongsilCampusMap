@@ -11,4 +11,5 @@ $(document).ready(function(){
     $('#freeBoardIcon').click(function(){
         window.location.href="./freeBoard.html";
     })
-})
+
+})       

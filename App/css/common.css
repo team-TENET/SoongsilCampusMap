@@ -21,18 +21,36 @@
   color: white;
   margin: 5%;
 }
-.header #appName {
+.header .title {
   float: left;
   margin-top: 3.7%;
   margin-left: 7%;
   color: white;
   font-size: 1.5rem;
 }
-.header #headerLogo {
+.header .titleType2 {
+  margin-left: 20%;
+}
+.header .titleType3 {
+  margin-left: 27%;
+}
+.header .headerLogo {
   float: right;
   width: 15%;
   margin-top: 2.5%;
   margin-right: 10%;
+}
+.header .writeIcon {
+  float: right;
+  width: 9%;
+  margin-top: 3.5%;
+  margin-right: 2%;
+}
+.header .searchIcon {
+  float: right;
+  width: 9%;
+  margin-top: 3%;
+  margin-right: 2%;
 }
 
 .content {
@@ -57,4 +75,27 @@
   width: 10%;
   height: auto;
   margin: 2% 6.4%;
+}
+.boardRealList {
+  list-style: none;
+  font-size: 1rem;
+  color: #707070;
+  width: 100%;
+  padding: 0;
+  margin-top: 0%;
+}
+.boardRealList li {
+  clear: both;
+  text-align: left;
+  border-bottom: 1px solid #cfcfcf;
+  padding: 4% 1% 1% 5%;
+  min-height: 102px;
+}
+.boardRealList img {
+  width: 20%;
+  float: right;
+  margin-right: 3%;
+}
+.boardRealList p {
+  width: 90%;
 }
