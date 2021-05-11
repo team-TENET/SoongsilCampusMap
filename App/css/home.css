@@ -1,0 +1,51 @@
+.mapPreviewDiv {
+  width: 100%;
+  height: 30%;
+}
+.mapPreviewDiv #mapPreview {
+  overflow: hidden;
+  width: 100%;
+}
+.boardPreviewDiv {
+  width: 100%;
+  height: 180%;
+}
+.boardPreviewList {
+  list-style: none;
+  font-size: 1rem;
+  color: #707070;
+  width: 84%;
+  padding: 0;
+  margin-left: 8%;
+  margin-top: 1%;
+}
+
+.boardPreviewList .boardTitle {
+  font-size: 1.2rem;
+  float: left;
+  margin: 10% auto 5% -1%;
+}
+.boardPreviewList .boardMore {
+  font-size: 2rem;
+  float: right;
+  margin: 6.5% 1% 1% auto;
+  color: #a5a1a1;
+}
+.boardPreviewList li {
+  clear: both;
+  border: 1px solid #a7a7a7;
+  text-align: left;
+  padding: 2% 2%;
+  border-bottom: none;
+}
+.boardPreviewList li:first-child {
+  border: none;
+}
+.boardPreviewList li:last-child {
+  border-bottom: 1px solid #a7a7a7;
+}
+
+.boardPreviewList img {
+  width: 20%;
+  float: right;
+}
