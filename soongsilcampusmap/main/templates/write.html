@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <meta charset= 'utf-8'/>
+    <title>Soongsil Campus Map - 글 쓰기</title>
+    <link rel="stylesheet" href="../static/css/common.css"/>
+    <link rel="stylesheet" href="../static/css/write.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.3.0/js/all.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="../static/js/script/common.js"></script>
+    <script src="../static/js/script/write.js"></script>
+</head>
+<body>
+    <div class="screenLimit">
+        <div class="header">
+            <i id="cancelIcon" class="fas fa-times fa-lg"></i>
+            <h class="title titleType3">글 쓰기</h>
+            <i id="finishIcon" class="fas fa-check fa-lg"></i>
+        </div>
+        <div class="content">
+            <div id="titleDiv">
+                <input id="titleInput" type="text" placeholder="제목"></input>
+            </div>
+            <div id="attachmentDiv">
+                <i class="far fa-image attachmentIcon fa-3x"></i>
+                <i class="fas fa-camera attachmentIcon fa-3x"></i>
+                <i class="fas fa-film attachmentIcon fa-3x"></i>
+                <i class="fas fa-paperclip attachmentIcon fa-3x"></i>
+            </div>
+            <div id="textDiv">
+                <textarea id="textInput" placeholder="내용"></textarea>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{% url 'home' %}"><img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/></a>
+            <a href="{% url 'map' %}"><img id="mapIcon" class="moveIcon" src="../static/image/mapIcon.png" alt="mapIcon"/></a>
+            <a href="{% url 'infoBoard' %}"><img id="infoBoardIcon" class="moveIcon" src="../static/image/infoBoardIcon.png" alt="infoBoardIcon"/></a>
+            <a href="{% url 'freeBoard' %}"><img id="freeBoardIcon" class="moveIcon" src="../static/image/freeBoardIcon.png" alt="freeBoardIcon"/></a>
+    </div>
+    </div>
+</body>

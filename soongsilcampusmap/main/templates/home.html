@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <title>Soongsil Campus Map</title>
+    <link rel="stylesheet" href="../static/css/common.css"/>
+    <link rel="stylesheet" href="../static/css/home.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="../static/js/script/common.js"></script>
+    <script src="../static/js/script/home.js"></script>
+</head>
+<body>
+    <div class="screenLimit">
+        <div class="header">
+            <i class="fas fa-bars menuIcon fa-lg"></i>
+            <h class="title">Soongsil Campus Map</h>
+            <img class="headerLogo" src="../static/image/blueLogo.png" alt="logo"/>
+        </div>
+        <div class="content">
+            <div class="mapPreviewDiv">
+                <a href="{% url 'map' %}">
+                    <img id="mapPreview" src="../static/image/mapPreview.png" alt="mapPreview"/>
+                </a>
+            </div>
+            <div class="boardPreviewDiv">
+                <ul class="boardPreviewList">
+                    <li><h4 class="boardTitle">정보게시판</h4> <a href="{% url 'infoBoard' %}"><h4 class="boardMore">+</h4></a></li>
+                    <li><span class="postPreviewSpan">수강 신청 하기</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">학점 계산은 어떻게 해야할까</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">깔아야 하는 어플들</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">수업 드랍하는 법</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">수업 출석이 안되는 경우</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                </ul>
+                <ul class="boardPreviewList">
+                    <li><h4 class="boardTitle">자유게시판</h4> <a href="{% url 'freeBoard' %}"><h4 class="boardMore">+</h4></a></li>
+                    <li><span class="postPreviewSpan">개강 날짜</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">집에 가고싶다</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">네이버 지도 vs 카카오 지도</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">이 앱은</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    <li><span class="postPreviewSpan">출석 체크가 이상해요</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="{% url 'home' %}"><img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/></a>
+            <a href="{% url 'map' %}"><img id="mapIcon" class="moveIcon" src="../static/image/mapIcon.png" alt="mapIcon"/></a>
+            <a href="{% url 'infoBoard' %}"><img id="infoBoardIcon" class="moveIcon" src="../static/image/infoBoardIcon.png" alt="infoBoardIcon"/></a>
+            <a href="{% url 'freeBoard' %}"><img id="freeBoardIcon" class="moveIcon" src="../static/image/freeBoardIcon.png" alt="freeBoardIcon"/></a>
+        </div>
+    </div>
+</body>
