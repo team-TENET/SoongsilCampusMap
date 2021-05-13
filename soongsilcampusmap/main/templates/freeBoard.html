@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <meta charset= 'utf-8'/>
+    <title>Soongsil Campus Map - 자유게시판</title>
+    <link rel="stylesheet" href="../static/css/common.css"/>
+    <link rel="stylesheet" href="../static/css/freeBoard.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="../static/js/script/common.js"></script>
+    <script src="../static/js/script/freeBoard.js"></script>
+</head>
+<body>
+    <div class="screenLimit">
+        <div class="header">
+            <i class="fas fa-bars menuIcon fa-lg"></i>
+            <h class="title titleType2">자유게시판</h>
+            <a href="{% url 'search' %}"><img id="freeBoardSearchIcon" class="searchIcon" src="../static/image/searchIcon.png" alt="searchIcon"/></a>
+            <a href="{% url 'write' %}"><img id="freeBoardWriteIcon" class="writeIcon" src="../static/image/writeIcon.png" alt="writeIcon"/></a>
+        </div>
+        <div class="content">
+            <ul class="boardRealList">
+                <li>
+                    <span class="postRealSpan"><b>개강 날짜</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>개강 언제지? 개강은 언제할까요 월요일에 개강을 하면
+                        앞으로 수업 주차는 어떻게 되는거지?
+                    </p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>집에 가고싶다</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>ㄴㅇㄻㅇㄹㄴㅇㄹㄴㅇㄹㄴ</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>네이버 지도 vs 카카오 지도</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>어떤 api를 사용하는 것이 더 좋을지 모르겠지만
+                        일단 카카오 지도 api를 사용하기로 했는데</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>이 앱은</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>숭실대 공식 앱인가</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>출석 체크가 이상해요</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>출석을 했는데 결석으로 뜨고있어요
+                        지각도 안했고 동영상도 끝까지 봤는데 여전히 표시가 안뜨는데 어떻게 해야 </p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>개강 날짜</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>개강 언제지? 개강은 언제할까요 월요일에 개강을 하면
+                        앞으로 수업 주차는 어떻게 되는거지?
+                    </p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>집에 가고싶다</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>ㄴㅇㄻㅇㄹㄴㅇㄹㄴㅇㄹㄴ</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>네이버 지도 vs 카카오 지도</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>어떤 api를 사용하는 것이 더 좋을지 모르겠지만
+                        일단 카카오 지도 api를 사용하기로 했는데</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>이 앱은</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>숭실대 공식 앱인가</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>출석 체크가 이상해요</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>출석을 했는데 결석으로 뜨고있어요
+                        지각도 안했고 동영상도 끝까지 봤는데 여전히 표시가 안뜨는데 어떻게 해야 </p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>개강 날짜</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>개강 언제지? 개강은 언제할까요 월요일에 개강을 하면
+                        앞으로 수업 주차는 어떻게 되는거지?
+                    </p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>집에 가고싶다</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>ㄴㅇㄻㅇㄹㄴㅇㄹㄴㅇㄹㄴ</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>네이버 지도 vs 카카오 지도</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>어떤 api를 사용하는 것이 더 좋을지 모르겠지만
+                        일단 카카오 지도 api를 사용하기로 했는데</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>이 앱은</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>숭실대 공식 앱인가</p>
+                </li>
+                <li>
+                    <span class="postRealSpan"><b>출석 체크가 이상해요</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
+                    <p>출석을 했는데 결석으로 뜨고있어요
+                        지각도 안했고 동영상도 끝까지 봤는데 여전히 표시가 안뜨는데 어떻게 해야 </p>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <a href="{% url 'home' %}"><img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/></a>
+            <a href="{% url 'map' %}"><img id="mapIcon" class="moveIcon" src="../static/image/mapIcon.png" alt="mapIcon"/></a>
+            <a href="{% url 'infoBoard' %}"><img id="infoBoardIcon" class="moveIcon" src="../static/image/infoBoardIcon.png" alt="infoBoardIcon"/></a>
+            <a href="{% url 'freeBoard' %}"><img id="freeBoardIcon" class="moveIcon" src="../static/image/freeBoardIcon.png" alt="freeBoardIcon"/></a>
+    </div>
+    </div>
+</body>
