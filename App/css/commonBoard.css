@@ -1,0 +1,23 @@
+.boardRealList {
+  list-style: none;
+  font-size: 1rem;
+  color: #707070;
+  width: 100%;
+  padding: 0;
+  margin-top: 0%;
+}
+.boardRealList li {
+  clear: both;
+  text-align: left;
+  border-bottom: 1px solid #cfcfcf;
+  padding: 4% 1% 1% 5%;
+  min-height: 102px;
+}
+.boardRealList img {
+  width: 20%;
+  float: right;
+  margin-right: 3%;
+}
+.boardRealList p {
+  width: 90%;
+}
