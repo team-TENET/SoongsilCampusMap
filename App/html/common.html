@@ -2,11 +2,15 @@
 <head>
     <meta charset= 'utf-8'/>
     <title>Soongsil Campus Map</title>
-    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/commonLayout.css"/>
+    <link rel="stylesheet" href="../css/commonHiddenMenu.css"/>
+    <link rel="stylesheet" href="../css/commonBoard.css"/>
     <link rel="stylesheet" href="../css/home.css"/>
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="../script/common.js"></script>
+    <script src="../script/commonLayout.js"></script>
+    <script src="../script/commonHiddenMenu.js"></script>
+    <script src="../script/commonBoard.js"></script>
 </head>
 <body>
     <div class="screenLimit">
@@ -23,6 +27,29 @@
             <img id="mapIcon" class="moveIcon" src="../image/mapIcon.png" alt="mapIcon"/>
             <img id="infoBoardIcon" class="moveIcon" src="../image/infoBoardIcon.png" alt="infoBoardIcon"/>
             <img id="freeBoardIcon" class="moveIcon" src="../image/freeBoardIcon.png" alt="freeBoardIcon"/>
+        </div>
+        <div class="hidden">
+            <div class="menuSlide">
+                <img class="profile" src="../image/profilePeople.png" alt="profilePicture">
+                <h5 class="loginPlease">로그인하기</h5>
+                <h5 class ="menuQuit">x</h5>
+            </div>
+            <div class="menuQuit2">
+                
+            </div>
+            <div class="loginSlide">
+                <div class="loginBox">
+                    <h6 class="loginText">로그인</h6>
+                    <h6 class="loginQuit">x</h6><br/>
+                    <form>
+                        <input class="loginId" type="text" placeholder="사용자 아이디" required><br/>
+                        <input class="loginPwd" type="password" placeholder="비밀번호" required><br/>
+                        <input class="loginSubmit" type="submit" value="로그인"></input><br/>
+                    </form>
+                    <h6 class="loginRegister">회원가입</h6>
+                    <h6 class="loginFind">아이디/비밀번호 찾기</h6>
+                </div>
+            </div>
         </div>
     </div>
 </body>
