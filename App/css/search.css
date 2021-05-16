@@ -7,11 +7,12 @@
   border-bottom: 1px solid #cfcfcf;
   background-color: #7bc4c3;
 }
-#searchTextDiv #backIcon {
+#searchTextDiv #blackBackIcon {
   color: rgb(97, 97, 97);
   float: left;
   margin-left: 3%;
   margin-top: 6%;
+  z-index: 10000;
 }
 #searchTextDiv #searchTextInput {
   border: 1px solid #efefef;
