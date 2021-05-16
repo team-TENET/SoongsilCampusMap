@@ -23,24 +23,30 @@
 	        <script>
 		        var container = document.getElementById('map');
 		        var options = {
-                    // 학교위치 - 위도: 37.49679696920952 경도: 126.95693165834993 
-		        	center: new kakao.maps.LatLng(37.496796, 126.956931),
+                    // 학교위치 - 위도:  37.49679696920952 경도: 126.95693165834993 
+		        	center: new kakao.maps.LatLng(37.496000, 126.958231),
 		        	level: 3
 		        };
             
 		        var map = new kakao.maps.Map(container, options);
+                //일단 마카 만드는것 만듬.
+                var markerPosition  = new kakao.maps.LatLng(37.496300, 126.958631); 
+                var marker = new kakao.maps.Marker({
+                position: markerPosition
+                });
+                marker.setMap(map);
+
+                var iwContent = '<div style="padding:5px;">중앙 도서관 </div>' // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwPosition = new kakao.maps.LatLng(33.450701, 126.570767); //인포윈도우 표시 위치입니다
+
+                // 인포윈도우를 생성합니다
+                var infowindow = new kakao.maps.InfoWindow({
+                    position : iwPosition, 
+                    content : iwContent 
+                });
+
+                infowindow.open(map, marker); 
 	        </script>
-            <script>
-                var markers = [
-                    {
-                        position: new kakao.maps.LatLng(37.496796, 126.956931)
-                    },
-                    {
-                        position: new kakao.maps.LatLng(37.496786, 126.956932), 
-                        text: '일단 테스트!' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
-                    }
-                ];
-            </script>
             {% comment %}지도찍는 스크립트
             <script>
             var positions = [];
