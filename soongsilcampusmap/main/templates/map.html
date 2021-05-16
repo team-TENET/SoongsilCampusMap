@@ -23,12 +23,46 @@
 	        <script>
 		        var container = document.getElementById('map');
 		        var options = {
-		        	center: new kakao.maps.LatLng(33.450701, 126.570667),
+                    // 학교위치 - 위도:  37.49679696920952 경도: 126.95693165834993 
+		        	center: new kakao.maps.LatLng(37.496000, 126.958231),
 		        	level: 3
 		        };
             
 		        var map = new kakao.maps.Map(container, options);
+                //일단 마카 만드는것 만듬.
+                var markerPosition  = new kakao.maps.LatLng(37.496300, 126.958631); 
+                var marker = new kakao.maps.Marker({
+                position: markerPosition
+                });
+                marker.setMap(map);
+
+                var iwContent = '<div style="padding:5px;">중앙 도서관 </div>' // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwPosition = new kakao.maps.LatLng(33.450701, 126.570767); //인포윈도우 표시 위치입니다
+
+                // 인포윈도우를 생성합니다
+                var infowindow = new kakao.maps.InfoWindow({
+                    position : iwPosition, 
+                    content : iwContent 
+                });
+
+                infowindow.open(map, marker); 
 	        </script>
+            {% comment %}지도찍는 스크립트
+            <script>
+            var positions = [];
+            for (var i = 0; i < Object.keys(attractions).length; i++) {
+                var content = {
+                title: attractions[i].title,
+                latlng: new kakao.maps.LatLng(attractions[i].mapy, attractions[i].mapx),
+                addr1: attractions[i].addr1,
+                detail: "디테일입니다 추후 추가예정",
+                tel: attractions[i].tel,
+            }
+            positions.push(content);
+            };
+            console.log(positions);
+            </script> 
+            {% endcomment %}
         </div>
         <div class="footer">
             <a href="{% url 'home' %}"><img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/></a>
