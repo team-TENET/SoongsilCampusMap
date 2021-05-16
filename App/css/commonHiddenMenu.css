@@ -1,3 +1,9 @@
+.header .menuIcon {
+  float: left;
+  color: white;
+  margin: 5.8% 5.8%;
+  z-index: 10000;
+}
 .menuSlide {
   background-color: rgba(255, 255, 255, 0.72);
   z-index: 10;
@@ -21,8 +27,8 @@
 }
 .menuSlide .loginPlease {
   float: left;
-  margin-top: 11%;
-  margin-left: 10%;
+  margin-top: 11.5%;
+  margin-left: 12%;
   font-size: 1rem;
   color: #707070;
 }
