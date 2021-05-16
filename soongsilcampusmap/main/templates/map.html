@@ -23,13 +23,40 @@
 	        <script>
 		        var container = document.getElementById('map');
 		        var options = {
-                    // 위도: 37.49679696920952 경도: 126.95693165834993 
+                    // 학교위치 - 위도: 37.49679696920952 경도: 126.95693165834993 
 		        	center: new kakao.maps.LatLng(37.496796, 126.956931),
 		        	level: 3
 		        };
             
 		        var map = new kakao.maps.Map(container, options);
 	        </script>
+            <script>
+                var markers = [
+                    {
+                        position: new kakao.maps.LatLng(37.496796, 126.956931)
+                    },
+                    {
+                        position: new kakao.maps.LatLng(37.496786, 126.956932), 
+                        text: '일단 테스트!' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
+                    }
+                ];
+            </script>
+            {% comment %}지도찍는 스크립트
+            <script>
+            var positions = [];
+            for (var i = 0; i < Object.keys(attractions).length; i++) {
+                var content = {
+                title: attractions[i].title,
+                latlng: new kakao.maps.LatLng(attractions[i].mapy, attractions[i].mapx),
+                addr1: attractions[i].addr1,
+                detail: "디테일입니다 추후 추가예정",
+                tel: attractions[i].tel,
+            }
+            positions.push(content);
+            };
+            console.log(positions);
+            </script> 
+            {% endcomment %}
         </div>
         <div class="footer">
             <a href="{% url 'home' %}"><img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/></a>
