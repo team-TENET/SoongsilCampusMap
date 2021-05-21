@@ -19,7 +19,6 @@
   margin-left: 7%;
   margin-top: 1%;
 }
-
 .boardPreviewList .boardTitle {
   font-size: 1.1rem;
   float: left;
@@ -44,7 +43,6 @@
 .boardPreviewList li:last-child {
   border-bottom: 1px solid #a7a7a7;
 }
-
 .boardPreviewList img {
   width: 20%;
   float: right;
