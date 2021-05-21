@@ -130,3 +130,10 @@
   margin-right: 5%;
   margin-top: 4%;
 }
+@media only screen and (max-width: 999px) {
+  .menuSlide {
+    width: 50%;
+    margin-top: -1%;
+    margin-left: 0%;
+  }
+}
