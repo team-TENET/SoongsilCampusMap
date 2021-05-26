@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#backIcon').click(function(){
+    $('#blackBackIcon').click(function(){
         history.go(-1);
     })
 })

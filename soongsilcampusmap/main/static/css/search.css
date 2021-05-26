@@ -1,25 +1,27 @@
 #searchTextDiv {
   width: 100%;
+  height: 10%;
   min-height: 68px;
   float: left;
-  margin-top: 1.5%;
+  margin-top: 0%;
   border-bottom: 1px solid #cfcfcf;
   background-color: #7bc4c3;
 }
-#searchTextDiv #backIcon {
+#searchTextDiv #blackBackIcon {
   color: rgb(97, 97, 97);
   float: left;
   margin-left: 3%;
-  margin-top: 4%;
+  margin-top: 6%;
+  z-index: 10000;
 }
 #searchTextDiv #searchTextInput {
   border: 1px solid #efefef;
   border-radius: 5px;
   width: 75%;
-  height: 100%;
+  height: 45%;
   min-height: 30px;
   background-color: white;
-  margin: 3% 0% 1% 3%;
+  margin: 4.5% 0% 1% 3.5%;
   float: left;
   padding-left: 2%;
 }
@@ -27,5 +29,6 @@
   color: rgb(97, 97, 97);
   float: right;
   margin-right: 4%;
-  margin-top: 4%;
+  margin-top: 6%;
+  font-size: 1.4em;
 }

@@ -18,8 +18,8 @@ def infoBoard(request):
 def map(request):
     return render(request, 'map.html')
 
-def post(request):
-    return render(request, 'post.html')
+def read(request):
+    return render(request, 'read.html')
 
 def search(request):
     return render(request, 'search.html')

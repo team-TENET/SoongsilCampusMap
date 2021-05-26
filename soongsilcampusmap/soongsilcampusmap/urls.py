@@ -28,7 +28,7 @@ urlpatterns = [
     path('index', index, name="index"),
     path('infoBoard', infoBoard, name="infoBoard"),
     path('map', map, name="map"),
-    path('post', post, name="post"),
+    path('read', read, name="read"),
     path('search', search, name="search"),
     path('write', write, name="write"),
 
