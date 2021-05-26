@@ -1,0 +1,139 @@
+.header .menuIcon {
+  float: left;
+  color: white;
+  margin: 5.8% 5.8%;
+  z-index: 10000;
+}
+.menuSlide {
+  background-color: rgba(255, 255, 255, 0.72);
+  z-index: 10;
+  float: left;
+  position: absolute;
+  width: 15.5%;
+  min-width: 200px;
+  height: 100%;
+  min-height: 515px;
+  visibility: hidden;
+}
+.moveMenuSlide {
+  transition: right 0.5s ease-in;
+}
+.menuSlide .profile {
+  float: left;
+  border-radius: 100%;
+  width: 20%;
+  margin-left: 5.5%;
+  margin-top: 7%;
+}
+.menuSlide .loginPlease {
+  float: left;
+  margin-top: 11.5%;
+  margin-left: 12%;
+  font-size: 1rem;
+  color: #707070;
+}
+.menuQuit {
+  float: right;
+  margin-right: 3.5%;
+  margin-top: 1%;
+  color: #707070;
+  font-size: 1.5rem;
+}
+.menuQuit2 {
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1;
+  float: left;
+  position: absolute;
+  width: 30%;
+  min-width: 460px;
+  height: 100%;
+  min-height: 515px;
+  visibility: hidden;
+}
+.loginSlide {
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+  float: left;
+  position: absolute;
+  width: 30%;
+  min-width: 460px;
+  height: 100%;
+  visibility: hidden;
+}
+.loginSlide .loginBox {
+  background-color: #7bc4c3;
+  width: 65%;
+  min-width: 300px;
+  height: 24%;
+  min-height: 195px;
+  float: left;
+  margin-left: 17.5%;
+  margin-top: 45%;
+}
+.loginSlide .loginText {
+  color: white;
+  font-size: 0.9rem;
+  float: left;
+  margin-top: 3.5%;
+  margin-left: 4%;
+}
+.loginSlide .loginQuit {
+  color: white;
+  font-size: 1.2rem;
+  float: right;
+  margin-top: 1%;
+  margin-right: 5%;
+}
+.loginSlide .loginId {
+  border: none;
+  width: 85%;
+  min-width: 100px;
+  height: 11.5%;
+  float: left;
+  margin-left: 5%;
+  margin-top: -6.5%;
+  padding: 2%;
+}
+.loginSlide .loginPwd {
+  border: none;
+  width: 85%;
+  min-width: 100px;
+  height: 11.5%;
+  float: left;
+  margin-left: 5%;
+  margin-top: 1%;
+  padding: 2%;
+}
+.loginSlide .loginSubmit {
+  border: none;
+  background-color: #2c6d90;
+  color: white;
+  width: 89%;
+  min-width: 100px;
+  height: 15%;
+  float: left;
+  margin-left: 5%;
+  margin-top: 4%;
+  padding: 2%;
+}
+.loginSlide .loginRegister {
+  color: white;
+  font-size: 0.2rem;
+  float: left;
+  margin-left: 5%;
+  margin-top: 4%;
+}
+.loginSlide .loginFind {
+  color: white;
+  font-size: 0.2rem;
+  float: right;
+  margin-right: 5%;
+  margin-top: 4%;
+}
+@media only screen and (max-width: 999px) {
+  .menuSlide {
+    width: 50%;
+    margin-top: -1%;
+    margin-left: 0%;
+  }
+}

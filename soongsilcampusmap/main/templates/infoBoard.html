@@ -111,25 +111,46 @@
     <div class="hidden">
         <div class="menuSlide">
             <img class="profile" src="../static/image/profilePeople.png" alt="profilePicture">
+            {% if not user.is_authenticated %}
             <h5 class="loginPlease">로그인하기</h5>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+            <h5 class="loginPlease">{{user.username}}</h5>
+            {% endif %}
             <h5 class ="menuQuit">x</h5>
         </div>
         <div class="menuQuit2">
             
         </div>
+        {% if not user.is_authenticated %}
         <div class="loginSlide">
             <div class="loginBox">
                 <h6 class="loginText">로그인</h6>
                 <h6 class="loginQuit">x</h6><br/>
-                <form>
-                    <input class="loginId" type="text" placeholder="사용자 아이디" required><br/>
-                    <input class="loginPwd" type="password" placeholder="비밀번호" required><br/>
+                <form method ="POST" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <input name = "username" class="loginId" type="text" placeholder="사용자 아이디" required><br/>
+                    <input name = "password" class="loginPwd" type="password" placeholder="비밀번호" required><br/>
                     <input class="loginSubmit" type="submit" value="로그인"></input><br/>
                 </form>
                 <h6 class="loginRegister">회원가입</h6>
                 <h6 class="loginFind">아이디/비밀번호 찾기</h6>
             </div>
         </div>
-    </div>
+        {% endif %}
+
+        {% if user.is_authenticated %}
+        <div class="loginSlide">
+            <div class="loginBox">
+                <h6 class="loginText">로그아웃 하시겠습니까?</h6>
+                <h6 class="loginQuit">x</h6><br/>
+                <form method ="POST" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <input class="loginSubmit" type="submit" value="로그아웃"></input><br/>
+                </form>
+            </div>
+        </div>
+        {% endif %}
     </div>
 </body>

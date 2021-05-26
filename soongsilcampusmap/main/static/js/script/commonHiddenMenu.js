@@ -22,15 +22,15 @@ $(document).ready(function(){
     $('.loginSubmit').click(function(){
                 if($('.loginId').val()!=""&&$('.loginPwd').val()!="")
                 {
-                    alert("로그인되었습니다");
+                    alert("처리되었습니다");
                     $('.loginSlide').css("visibility", "hidden");
                     //프로필 사진과 이름등의 정보를 그사람껄로 바꿔준다
                 }    
     })
     $('.loginRegister').click(function(){
-        window.location.href="./loginRegister.html";
+        window.location.href="./loginRegister";
     });
     $('.loginFind').click(function(){
-        window.location.href="./loginFind.html";
+        window.location.href="./loginFind";
     });
 })
