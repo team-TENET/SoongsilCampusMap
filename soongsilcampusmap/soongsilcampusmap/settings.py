@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -123,6 +124,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATUCFILES_DIRS = [
+    os.path.join(BASE_DIR, 'main', 'static')
+]
+# 현재 static파일이 어디에 있는지! 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# static 파일을 어디에 모을건지!
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# 이용자가 업로드한 파일을 모으는 곳
+MEDIA_URL = '/media/'
+# 사용자에게 보여주는 media url 설정해줌
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

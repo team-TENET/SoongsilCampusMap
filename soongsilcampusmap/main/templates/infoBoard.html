@@ -25,81 +25,13 @@
         </div>
         <div class="content">
             <ul class="boardRealList">
+                {% for post in posts %}
                 <li>
-                    <span class="postRealSpan"><b>수강 신청 하기</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>수강신청을 할 때에는 수강할 과목들의 학점과 경쟁률을
-                    고려하여 우선순위를 지정하게 되며</p>
+                    <span class="postRealSpan"><b>{{post.title}}</b></span> <a href = "{%url 'read' post.id%}"><img class="lookMore" src="../static/image/lookMore.png"></a><br/>
+                    <p>{{post.summary}}</p>
                 </li>
-                <li>
-                    <span class="postRealSpan"><b>학점 계산은 어떻게 해야할까</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>받게 되는 학점에 따라 변환되는 점수가 달라집니다.
-                        A+부터 F까지의 변환 점수는 다음과 같습니다.</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>깔아야 하는 어플들</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>숭실대 공식 어플들은 다음과 같습니다.
-                        - 슈팅</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수업 드랍하는 법</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>수업 드랍 기간이 끝나기 전까지 드랍이 가능합니다.
-                        유세인트를 통해 드랍이 가능하며</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수업 출석이 안되는 경우</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>스마트 캡퍼스에서 사전 녹화 강의를 들을 시에
-                        기간 내에 동영상 시청을 완료하지 않을 경우 출석이</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수강 신청 하기</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>수강신청을 할 때에는 수강할 과목들의 학점과 경쟁률을
-                    고려하여 우선순위를 지정하게 되며</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>학점 계산은 어떻게 해야할까</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>받게 되는 학점에 따라 변환되는 점수가 달라집니다.
-                        A+부터 F까지의 변환 점수는 다음과 같습니다.</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>깔아야 하는 어플들</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>숭실대 공식 어플들은 다음과 같습니다.
-                        - 슈팅</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수업 드랍하는 법</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>수업 드랍 기간이 끝나기 전까지 드랍이 가능합니다.
-                        유세인트를 통해 드랍이 가능하며</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수업 출석이 안되는 경우</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>스마트 캡퍼스에서 사전 녹화 강의를 들을 시에
-                        기간 내에 동영상 시청을 완료하지 않을 경우 출석이</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수강 신청 하기</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>수강신청을 할 때에는 수강할 과목들의 학점과 경쟁률을
-                    고려하여 우선순위를 지정하게 되며</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>학점 계산은 어떻게 해야할까</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>받게 되는 학점에 따라 변환되는 점수가 달라집니다.
-                        A+부터 F까지의 변환 점수는 다음과 같습니다.</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>깔아야 하는 어플들</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>숭실대 공식 어플들은 다음과 같습니다.
-                        - 슈팅</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수업 드랍하는 법</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>수업 드랍 기간이 끝나기 전까지 드랍이 가능합니다.
-                        유세인트를 통해 드랍이 가능하며</p>
-                </li>
-                <li>
-                    <span class="postRealSpan"><b>수업 출석이 안되는 경우</b></span> <img class="lookMore" src="../static/image/lookMore.png"><br/>
-                    <p>스마트 캡퍼스에서 사전 녹화 강의를 들을 시에
-                        기간 내에 동영상 시청을 완료하지 않을 경우 출석이</p>
-                </li>   
+                {% endfor %}
+                   
             </ul>
         </div>
         <div class="footer">
