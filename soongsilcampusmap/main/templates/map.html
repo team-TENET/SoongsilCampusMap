@@ -87,11 +87,15 @@
                     {
                         content: '<div>교육관</div>', 
                         latlng: new kakao.maps.LatLng(37.497856, 126.956833),
-                    } ,    
+                    } , 
+                    {
+                        content: '<div>중앙도서관</div>', 
+                        latlng: new kakao.maps.LatLng(37.496300, 126.958631),
+                    },         
                     {
                         content: '<div>백마관</div>', 
                         latlng: new kakao.maps.LatLng(37.497856, 126.956233),
-                    }                         
+                    }                                      
                                                                                                                                                        
                 ];
 
@@ -106,7 +110,6 @@
                     // 마커에 표시할 인포윈도우를 생성합니다 
                     var infowindow = new kakao.maps.InfoWindow({
                         content: positions[i].content, // 인포윈도우에 표시할 내용
-                        removable : iwRemovable
                     });
                     var clicked = 0;
                     // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
@@ -127,32 +130,6 @@
                         }
                     };
                 }
-
-
-
-                //일단 마카 만드는것 만듬.
-                var markerPosition  = new kakao.maps.LatLng(37.496300, 126.958631); 
-                var marker = new kakao.maps.Marker({
-                    position: markerPosition,
-                    clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
-                });
-
-                marker.setMap(map);
-
-                var iwContent = '<div style="padding:5px;">중앙 도서관 </div>', iwRemovable = true; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                iwPosition = new kakao.maps.LatLng(33.450701, 126.570767); //인포윈도우 표시 위치입니다
-                
-                // 인포윈도우를 생성합니다
-                var infowindow = new kakao.maps.InfoWindow({
-                    content : iwContent,
-                    removable : iwRemovable
-                });
-
-                kakao.maps.event.addListener(marker, 'click', function() {
-                // 마커 위에 인포윈도우를 표시합니다
-                    infowindow.open(map, marker);  
-                });
-
 	        </script>
             {% comment %}지도찍는 스크립트
             <script>
