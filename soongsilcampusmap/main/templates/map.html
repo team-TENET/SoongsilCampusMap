@@ -20,7 +20,7 @@
             <img class="headerLogo" src="../static/image/blueLogo.png" alt="logo"/>
         </div>
         <div class="contentMap">
-            <div id="map" style="width:700px;height:800px;"></div>
+            <div id="map" style="width:90%;min-width:700px;max-width:800px;height:800px;"></div>
 	        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	1a836a7795770e5334d4b02985cf954a"></script>
 	        <script>
 		        var container = document.getElementById('map');
@@ -31,6 +31,26 @@
 		        };
                 var infowindows = [];
 		        var map = new kakao.maps.Map(container, options);
+                var names=["피라미드", "미래관", "조만식기념관", "학생회관", "웨스터민스터홀", "진리관", "베어드홀", "형남공학관", "숭덕경상관", "문화관", "전산관", "정보과학관", "벤처중소기업센터", "교육관", "백마관", "중앙도서관"];
+                var types=["교내 복사실", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물", "교내 건물"];
+                var infoList=["도서관에 가는 길에 있는 교내 복사실 <br/>복사기가 10대 이상 있어 많이 이용되며 무인 충전기를 통해 충전 가능<br/>최초 사용시에는 회원 가입이 필요하며 데스크에서 제본도 가능<br/>",
+                 "미래관에선 언어 수업이 있었음 아래층에는 곱등이가 살았었다", 
+                 "1층에 복사기 1대가 존재한다",
+                 "학생 식당, 생협, 각종 가게들과 동아리방이 있다<br/> 엘레베이터와 들어가는 통로가 여러개 존재한다<br/> 학생식당 및 생협 운영시간이 매번 유리창에 붙어있음<br/><br/>",
+                 "웨스터민스터홀은 이름이 어렵다",
+                 "진리관은 나름 최신 건물이다", 
+                 "베어드홀은 자연대 건물이다", 
+                 "형남공학관은 공대가 많이 들어있다", 
+                 "최근 다시 지은 건물 안에 카페 있음<br/>", 
+                 "문화관 1층에는 앉아서 말할 수 있는 공간이 존재한다", 
+                 "1층에는 더키친이라는 음식점이 있다<br/>", 
+                 "정보섬은 IT대 수업이 주로 있는 건물이다<br/>", 
+                 "벤처중소기업센터 모르겠음", 
+                 "교육관 이건 뭔지 들어본적도 없음", 
+                 "백마관은 엘레베이터가 존재하지 않는다", 
+                 "중앙도서관은 크게 지상층과 지하층으로 나뉜다<br/> 지상층에는 일반 도서와 공부할 수 있는 공간이 존재하며 저녁이 되면 문을 닫고<br/> 지하층은 공부만을 위해 있는 공간으로 24시 개방하는 경우도 많다<br/>\
+                 6층에는 카페가 있고 1층에는 뭐였더라 뭐로 리모델링 되었음<br/> 들어가려면 출입증이 필요하다<br/> 출입증을 카드가 아닌 앱으로 할 경우 앱을 켠지 10초가 넘어갈 경우<br/>출입증이 안먹히므로 앱을 다시 켜줘야됨<br/>"];
+                var memoList=["피라미드", "미래관", "조만식기념관", "학생회관", "웨스터민스터홀", "진리관", "베어드홀", "형남공학관", "숭덕경상관", "문화관", "전산관", "정보과학관", "벤처중소기업센터", "교육관", "백마관", "중앙도서관"];
                 var positions = [
                     {
                         content:'<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">피라미드</div>',
@@ -129,7 +149,10 @@
                             clicked = 1;
                             infowindow.open(map, marker);
                             console.log("map "+index);
-                            console.log(positions[index]);
+                            $('#markName').html(names[index]);
+                            $('#markType').html(types[index]);
+                            $('#markInfo').html(infoList[index]);
+                            $('#markMemo').html(memoList[index]);
                         }
                         else{
                             clicked = 0;
@@ -164,16 +187,20 @@
         </div>
         <div class="infoMap">
             <div id="markTitle">
-                <h id="markName">건물명</h>
-                <h id="markType">교내건물</h><br/><br/><br/>
+                <h id="markName">숭실대학교</h>
+                <h id="markType">대학교</h><br/><br/><br/>
             </div>
             <div id="markContent">
-                <p id="markInfo">이 건물은 무슨 수업 위주로 있는 건물이다<br/>
-                1. 팀플 가능한 장소들 : 3층, 4층에 의자와 책상이 있음<br/>
-                2. 특징 : 무슨 건물과 이어져있어서 연강시 바로 이동 가능<br/>
-            </p><br/>
-                <h id="markMemoLabel">memo</h>
-                <textarea id="markMemo">여기에는 화요일 수업이 5개가 있다</textarea>
+                <p id="markInfo">숭실대학교는 1897년에 설립된 개신교 미션스쿨로서 사립대학이다.<br/>
+                     1938년 자진 폐교까지 평양에 캠퍼스가 있었으나,<br/>
+                     분단 이후 서울에 캠퍼스를 두게 되었다.<br/>
+                     현재 캠퍼스는 서울특별시 동작구 상도로 369 에 있다. <br/>
+                </p><br/>
+                <div>
+                    <h id="markMemoLabel">memo</h>
+                    <textarea id="markMemo">기말고사 기간이 되었다!</textarea>
+                </div>
+                
             </div>    
         </div>
         <div class="footer">    
