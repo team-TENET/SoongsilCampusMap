@@ -3,13 +3,11 @@
     {% load static %}
     <meta charset= 'utf-8'/>
     <title>Soongsil Campus Map - 지도 </title>
-    <link rel="stylesheet" href="../static/css/commonLayout.css"/>
-    <link rel="stylesheet" href="../static/css/commonHiddenMenu.css"/>
+    <link rel="stylesheet" href="../static/css/common.css"/>
     <link rel="stylesheet" href="../static/css/map.css"/>
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="../static/js/script/commonLayout.js"></script>
-    <script src="../static/js/script/commonHiddenMenu.js"></script>
+    <script src="../static/js/script/common.js"></script>
     <script src="../static/js/script/map.js"></script>
 </head>
 <body>
@@ -29,7 +27,7 @@
 		        	center: new kakao.maps.LatLng(37.496000, 126.958231),
 		        	level: 3
 		        };
-            
+                var infowindows = [];
 		        var map = new kakao.maps.Map(container, options);
                 var positions = [
                     {
@@ -130,13 +128,21 @@
                             margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
                         latlng: new kakao.maps.LatLng(37.497856, 126.956833),
                     } ,    
+                       
+                    {
+                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
+                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">백마관</span>\
+                            <button class="memoWriteButton" value="중앙도서관" style="font-size:500;float:right;margin-top:3%;\
+                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        latlng: new kakao.maps.LatLng(37.496300, 126.958631),
+                    },         
                     {
                         content: '<div style="width:100%;padding:3%;margin-left:3%;">\
                             <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">백마관</span>\
                             <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
                             margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
                         latlng: new kakao.maps.LatLng(37.497856, 126.956233),
-                    }                         
+                    }                                      
                                                                                                                                                        
                 ];
 
@@ -151,20 +157,23 @@
                     // 마커에 표시할 인포윈도우를 생성합니다 
                     var infowindow = new kakao.maps.InfoWindow({
                         content: positions[i].content, // 인포윈도우에 표시할 내용
-                        removable : iwRemovable
                     });
+                    infowindows.push(infowindow);
+                    var activeWindow;
                     var clicked = 0;
                     // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
                     // 이벤트 리스너로는 클로저를 만들어 등록합니다 
                     // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
-                    kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow, clicked));
+                    kakao.maps.event.addListener(marker, 'click', makeOverListener(map, marker, infowindow, clicked, positions));
                 }
-                function makeOverListener(map, marker, infowindow, clicked) {
+                function makeOverListener(map, marker, infowindow, clicked, positions) {
                     return function() {
                         console.log('clicked: ' + clicked);
                         if(clicked === 0){
+                            allInfowindowClose();
                             clicked = 1;
                             infowindow.open(map, marker);
+                            
                         }
                         else{
                             clicked = 0;
@@ -172,34 +181,13 @@
                         }
                     };
                 }
-
-
-
-                //일단 마카 만드는것 만듬.
-                var markerPosition  = new kakao.maps.LatLng(37.496300, 126.958631); 
-                var marker = new kakao.maps.Marker({
-                    position: markerPosition,
-                    clickable: true // 마커를 클릭했을 때 지도의 클릭 이벤트가 발생하지 않도록 설정합니다
-                });
-
-                marker.setMap(map);
-
-                var iwContent = '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">중앙도서관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>', iwRemovable = true; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                iwPosition = new kakao.maps.LatLng(33.450701, 126.570767); //인포윈도우 표시 위치입니다
-                
-                // 인포윈도우를 생성합니다
-                var infowindow = new kakao.maps.InfoWindow({
-                    content : iwContent,
-                    removable : iwRemovable
-                });
-
-                kakao.maps.event.addListener(marker, 'click', function() {
-                // 마커 위에 인포윈도우를 표시합니다
-                    infowindow.open(map, marker);  
-                });
+                function allInfowindowClose() {
+                   for(var i=0; i<infowindows.length; i++) {
+                        var infowindow = infowindows[i];
+                        
+                        infowindow.close();
+                    }
+                };
 
 	        </script>
             {% comment %}지도찍는 스크립트
@@ -225,49 +213,5 @@
             <a href="{% url 'infoBoard' %}"><img id="infoBoardIcon" class="moveIcon" src="../static/image/infoBoardIcon.png" alt="infoBoardIcon"/></a>
             <a href="{% url 'freeBoard' %}"><img id="freeBoardIcon" class="moveIcon" src="../static/image/freeBoardIcon.png" alt="freeBoardIcon"/></a>
     </div>
-    <div class="hidden">
-        <div class="menuSlide">
-            <img class="profile" src="../static/image/profilePeople.png" alt="profilePicture">
-            {% if not user.is_authenticated %}
-            <h5 class="loginPlease">로그인하기</h5>
-            {% endif %}
-
-            {% if user.is_authenticated %}
-            <h5 class="loginPlease">{{user.username}}</h5>
-            {% endif %}
-            <h5 class ="menuQuit">x</h5>
-        </div>
-        <div class="menuQuit2">
-            
-        </div>
-        {% if not user.is_authenticated %}
-        <div class="loginSlide">
-            <div class="loginBox">
-                <h6 class="loginText">로그인</h6>
-                <h6 class="loginQuit">x</h6><br/>
-                <form method ="POST" action="{% url 'login' %}">
-                    {% csrf_token %}
-                    <input name = "username" class="loginId" type="text" placeholder="사용자 아이디" required><br/>
-                    <input name = "password" class="loginPwd" type="password" placeholder="비밀번호" required><br/>
-                    <input class="loginSubmit" type="submit" value="로그인"></input><br/>
-                </form>
-                <h6 class="loginRegister">회원가입</h6>
-                <h6 class="loginFind">아이디/비밀번호 찾기</h6>
-            </div>
-        </div>
-        {% endif %}
-
-        {% if user.is_authenticated %}
-        <div class="loginSlide">
-            <div class="loginBox">
-                <h6 class="loginText">로그아웃 하시겠습니까?</h6>
-                <h6 class="loginQuit">x</h6><br/>
-                <form method ="POST" action="{% url 'logout' %}">
-                    {% csrf_token %}
-                    <input class="loginSubmit" type="submit" value="로그아웃"></input><br/>
-                </form>
-            </div>
-        </div>
-        {% endif %}
     </div>
 </body>
