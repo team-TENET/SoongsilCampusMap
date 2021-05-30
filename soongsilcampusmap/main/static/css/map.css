@@ -47,7 +47,6 @@
   margin-top: 5%;
 }
 .infoMap #markInfo {
-  float: left;
   padding: 2%;
   height: 50%;
   margin-bottom: 10%;
@@ -58,10 +57,10 @@
   float: left;
 }
 .infoMap #markMemoLabel {
-  float: left;
   color: #858585;
-  margin-top: 17%;
-  margin-left: -80%;
+  float: left;
+  margin-top: -12%;
+  margin-left: 2%;
 }
 .infoMap #markMemo {
   color: #a1a1a1;
@@ -70,6 +69,6 @@
   min-height: 100px;
   padding: 2%;
   margin-left: 2%;
-  margin-top: -3.5%;
+  margin-top: -5.5%;
   border: 1px solid #cfcfcf;
 }
