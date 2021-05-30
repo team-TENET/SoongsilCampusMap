@@ -3,11 +3,13 @@
     {% load static %}
     <meta charset= 'utf-8'/>
     <title>Soongsil Campus Map - 지도 </title>
-    <link rel="stylesheet" href="../static/css/common.css"/>
+    <link rel="stylesheet" href="../static/css/commonLayout.css"/>
+    <link rel="stylesheet" href="../static/css/commonHiddenMenu.css"/>
     <link rel="stylesheet" href="../static/css/map.css"/>
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="../static/js/script/common.js"></script>
+    <script src="../static/js/script/commonLayout.js"></script>
+    <script src="../static/js/script/commonHiddenMenu.js"></script>
     <script src="../static/js/script/map.js"></script>
 </head>
 <body>
@@ -17,7 +19,7 @@
             <h class="title">Soongsil Campus Map</h>
             <img class="headerLogo" src="../static/image/blueLogo.png" alt="logo"/>
         </div>
-        <div class="content">
+        <div class="contentMap">
             <div id="map" style="width:700px;height:800px;"></div>
 	        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	1a836a7795770e5334d4b02985cf954a"></script>
 	        <script>
@@ -31,118 +33,69 @@
 		        var map = new kakao.maps.Map(container, options);
                 var positions = [
                     {
-                        content:'<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">피라미드</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
-                        latlng: new kakao.maps.LatLng(37.496000, 126.958231)
+                        content:'<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">피라미드</div>',
+                        latlng: new kakao.maps.LatLng(37.496000, 126.958231),
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">미래관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">미래관</div>',
                         latlng: new kakao.maps.LatLng(37.495636, 126.958433)
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">조만식기념관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content:'<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">조만식기념관</div>',
                         latlng: new kakao.maps.LatLng(37.497300, 126.958221)
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">학생회관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content:'<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">학생회관</div>',
                         latlng: new kakao.maps.LatLng(37.497000, 126.956820)
                     },          
                     {
-                        content: '<div style="padding:2%;width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:1%;">웨스터민스터홀</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:2%;\
-                            margin-right:-5%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">웨스터민스터홀</div>',
                         latlng: new kakao.maps.LatLng(37.496800, 126.958431)
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">진리관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">진리관</div>',
                         latlng: new kakao.maps.LatLng(37.496900, 126.957461)
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">베어드홀</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content:'<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">베어드홀</div>',
                         latlng: new kakao.maps.LatLng(37.496500, 126.956461)
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">형남공학관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">형남공학관</div>',
                         latlng: new kakao.maps.LatLng(37.495700, 126.956061)
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">숭덕경상관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">숭덕경상관</div>',
                         latlng: new kakao.maps.LatLng(37.496900, 126.955061)
                     },
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">문화관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">문화관</div>',
                         latlng: new kakao.maps.LatLng(37.496600, 126.954361)
                     } ,          
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">전산관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">전산관</div>',
                         latlng: new kakao.maps.LatLng(37.495456, 126.959533)
                     } ,       
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">정보과학관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">정보과학관</div>',
                         latlng: new kakao.maps.LatLng(37.494536, 126.959933),
                     } ,    
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:0%;">벤처중소기업센터</span>\
-                            <button class="memoWriteButton" value="벤처중소기업센터" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">벤처중소기업센터</div>',
                         latlng: new kakao.maps.LatLng(37.497556, 126.957533),
                     } ,
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">교육관</span>\
-                            <button class="memoWriteButton" value="교육관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content:'<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">교육관</div>',
                         latlng: new kakao.maps.LatLng(37.497856, 126.956833),
                     } ,    
-                       
                     {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">백마관</span>\
-                            <button class="memoWriteButton" value="중앙도서관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
-                        latlng: new kakao.maps.LatLng(37.496300, 126.958631),
-                    },         
-                    {
-                        content: '<div style="width:100%;padding:3%;margin-left:3%;">\
-                            <span style="float:left;color:rgb(97, 97, 97);margin-left:5%;">백마관</span>\
-                            <button class="memoWriteButton" value="백마관" style="font-size:500;float:right;margin-top:3%;\
-                            margin-right:-10%;border:none;border-radius:100%;color:white;background-color:#7bc4c3;">+</button></div>',
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">백마관</div>',
                         latlng: new kakao.maps.LatLng(37.497856, 126.956233),
-                    }                                      
+                    },     
+                    {
+                        content: '<div style="float:left;color:rgb(97, 97, 97);margin-left:5%;width:100%;padding:3%;margin-left:3%;">중앙도서관</div>',
+                        latlng: new kakao.maps.LatLng(33.450701, 126.570767),
+                    }                      
                                                                                                                                                        
                 ];
 
@@ -173,7 +126,8 @@
                             allInfowindowClose();
                             clicked = 1;
                             infowindow.open(map, marker);
-                            
+                            console.log("map"+marker);
+                            console.log(positions[1]);
                         }
                         else{
                             clicked = 0;
@@ -184,7 +138,6 @@
                 function allInfowindowClose() {
                    for(var i=0; i<infowindows.length; i++) {
                         var infowindow = infowindows[i];
-                        
                         infowindow.close();
                     }
                 };
@@ -206,6 +159,20 @@
             console.log(positions);
             </script> 
             {% endcomment %}
+        </div>
+        <div class="infoMap">
+            <div id="markTitle">
+                <h id="markName">건물명</h>
+                <h id="markType">교내건물</h><br/><br/><br/>
+            </div>
+            <div id="markContent">
+                <p id="markInfo">이 건물은 무슨 수업 위주로 있는 건물이다<br/>
+                1. 팀플 가능한 장소들 : 3층, 4층에 의자와 책상이 있음<br/>
+                2. 특징 : 무슨 건물과 이어져있어서 연강시 바로 이동 가능<br/>
+            </p><br/>
+                <h id="markMemoLabel">memo</h>
+                <textarea id="markMemo">여기에는 화요일 수업이 5개가 있다</textarea>
+            </div>    
         </div>
         <div class="footer">    
             <a href="{% url 'home' %}"><img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/></a>

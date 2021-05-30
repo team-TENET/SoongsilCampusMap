@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".memoWriteButton").click(function(){
+    $("area").click(function(){
         console.log("click");
     })
 })
