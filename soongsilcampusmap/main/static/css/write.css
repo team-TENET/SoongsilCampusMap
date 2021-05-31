@@ -6,8 +6,9 @@
 .header #finishIcon {
   float: right;
   margin-top: 5.2%;
-  margin-right: 8%;
+  margin-right: 5%;
   color: white;
+  background-color: transparent;
 }
 
 #titleDiv {
