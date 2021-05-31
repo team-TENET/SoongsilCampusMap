@@ -5,5 +5,4 @@ from .views import *
 urlpatterns = [
     path('loginFind', loginFind, name="loginFind"),
     path('loginRegister', loginRegister, name="loginRegister"),
-
 ]

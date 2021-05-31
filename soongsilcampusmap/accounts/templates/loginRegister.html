@@ -11,7 +11,7 @@
     <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
     <script src="../static/js/script/commonLayout.js"></script>
     <script src="../static/js/script/commonHiddenMenu.js"></script>
-    <script src="../static/js/script/commonBoard.js"></script>
+    <script src="../static/js/script/loginRegister.js"></script>
 </head>
 <body>
     <div class="screenLimit">
@@ -21,7 +21,38 @@
             <img class="headerLogo" src="../static/image/blueLogo.png" alt="logo"/>
         </div>
         <div class="content">
-            회원가입하기
+            <form method ="POST" action="{% url 'loginRegister' %}">
+                {% csrf_token %}
+                <ul>
+                    <li>
+                        <h>단과대/학부</h><input type="text">
+                    </li>
+                    <li>
+                     <h>이름</h><input type="text">
+                 </li>
+                 <li>
+                     <h>아이디(학번)</h><input type="number" name="username">
+                 </li>
+                 <li>
+                     <h>비밀번호</h><input type="password" name="password">
+                 </li>
+                 <li>
+                     <h>비밀번호 확인</h><input type="password">
+                 </li>
+                 <li>
+                     <h>이메일</h><input type="email">
+                 </li>
+                 <li>
+                     <h>닉네임</h><input type="text">
+                 </li>
+                 <li>
+                     <h>전화번호</h><input type="tel">
+                 </li>
+ 
+                </ul>
+                <button id="registerCancel" type="submit">취소</button>
+                <button id="registerDone" type="submit">확인</button>
+             </form>
         </div>
         <div class="footer">
             <img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/>

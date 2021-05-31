@@ -1,0 +1,35 @@
+li {
+  margin-left: 0%;
+  list-style: none;
+  width: 100%;
+  min-height: 30px;
+  padding: 2%;
+}
+li input {
+  float: right;
+  margin-right: 35%;
+  min-height: 20px;
+  width: 40%;
+}
+li:nth-child(2n-1) {
+  background-color: #7bc4c3;
+  color: white;
+}
+li:nth-child(2n-1) input {
+  background-color: #7bc4c3;
+  border: none;
+  border-bottom: 1px solid white;
+}
+li:nth-child(2n) input {
+  border: none;
+  border-bottom: 1px solid #cfcfcf;
+}
+button {
+  background-color: #2c6d90;
+  color: white;
+  border: none;
+  border-radius: 1px;
+  width: 30%;
+  min-height: 35px;
+  margin-left: 10%;
+}
