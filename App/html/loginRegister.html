@@ -4,13 +4,12 @@
     <title>Soongsil Campus Map - 회원가입 </title>
     <link rel="stylesheet" href="../css/commonLayout.css"/>
     <link rel="stylesheet" href="../css/commonHiddenMenu.css"/>
-    <link rel="stylesheet" href="../css/commonBoard.css"/>
     <link rel="stylesheet" href="../css/loginRegister.css"/>
     <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
     <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="../script/loginRegister.js"></script>
     <script src="../script/commonLayout.js"></script>
     <script src="../script/commonHiddenMenu.js"></script>
-    <script src="../script/commonBoard.js"></script>
 </head>
 <body>
     <div class="screenLimit">
@@ -20,7 +19,38 @@
             <img class="headerLogo" src="../image/blueLogo.png" alt="logo"/>
         </div>
         <div class="content">
-            회원가입하기
+            <form>
+               <ul>
+                   <li>
+                       <h>단과대/학부</h><input type="text">
+                   </li>
+                   <li>
+                    <h>이름</h><input type="text">
+                </li>
+                <li>
+                    <h>아이디(학번)</h><input type="number">
+                </li>
+                <li>
+                    <h>비밀번호</h><input type="password">
+                </li>
+                <li>
+                    <h>비밀번호 확인</h><input type="password">
+                </li>
+                <li>
+                    <h>이메일</h><input type="email">
+                </li>
+                <li>
+                    <h>닉네임</h><input type="text">
+                </li>
+                <li>
+                    <h>전화번호</h><input type="tel">
+                </li>
+
+               </ul>
+               <button id="registerCancel" type="submit">취소</button>
+               <button id="registerDone" type="submit">확인</button>
+            </form>
+
         </div>
         <div class="footer">
             <img id="homeIcon" class="moveIcon" src="../image/homeIcon.png" alt="homeIcon"/>
