@@ -9,9 +9,12 @@ urlpatterns = [
     path('infoBoard', infoBoard, name="infoBoard"),
     path('map', map, name="map"),
     path('read/<int:id>', read, name="read"),
+    path('read_free/<int:id>', read_free, name="read_free"),
     path('search', search, name="search"),
     path('write', write, name="write"),
     path('create', create, name="create"),
+    path('write_free', write_free, name="write_free"),
+    path('create_free', create_free, name="create_free"),
     path('login', login, name="login"),
     path('logout', logout, name="logout"),
 

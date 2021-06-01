@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import auth
-from .models import Post
+from .models import Post, Post_free
 from django.utils import timezone
 
 def common(request):
     return render(request, 'common.html')
 
 def freeBoard(request):
-    return render(request, 'freeBoard.html')
+    posts_free = Post_free.objects.all()
+    return render(request, 'freeBoard.html', {'posts_free':posts_free})
 
 def home(request):
     return render(request, 'home.html')
@@ -27,6 +28,10 @@ def read(request, id):
     post = get_object_or_404(Post, pk=id)
     return render(request, 'read.html', {'post':post})
 
+def read_free(request, id):
+    post_free = get_object_or_404(Post_free, pk=id)
+    return render(request, 'read_free.html', {'post_free':post_free})
+
 def search(request):
     return render(request, 'search.html')
 
@@ -41,6 +46,18 @@ def create(request):
     new_post.author=request.user #바뀔부분
     new_post.save()
     return redirect('infoBoard')
+
+def write_free(request):
+    return render(request, 'write_free.html')
+
+def create_free(request):
+    free_post=Post_free()
+    free_post.title=request.POST['title']
+    free_post.body=request.POST['body']
+    free_post.pub_date= timezone.now()
+    free_post.author=request.user #바뀔부분
+    free_post.save()
+    return redirect('freeBoard')
 
 def login(request):
     if request.method == 'POST':

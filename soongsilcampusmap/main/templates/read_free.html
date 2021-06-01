@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    {% load static %}
+    <meta charset= 'utf-8'/>
+    <title>Soongsil Campus Map</title>
+    <link rel="stylesheet" href="../static/css/commonLayout.css"/>
+    <link rel="stylesheet" href="../static/css/read.css"/>
+    <script src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
+    <script src="http://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="../static/js/script/commonLayout.js"></script>
+    <script src="../static/js/script/read.js"></script>
+</head>
+<body>
+    <div class="screenLimit">
+        <div class="header">
+            <i id="whiteBackIcon" class="fas fa-arrow-left fa-lg"></i>
+            <h class="title">Soongsil Campus Map</h>
+            <img class="headerLogo" src="../static/image/blueLogo.png" alt="logo"/>
+        </div>
+        <div class="content">
+            <div id="readTitle">{{post_free.title}}</div>
+            <div id="writerInfoDiv">
+                <img id="writerProfile" src="../static/image/profilePeople.png"/>
+                <div class="">
+                    <h6 id="writerName">{{post_free.author}}</h6>
+                    <h6 id="writerDate">{{post_free.pub_date}}</h6>
+                </div>
+            </div>
+            <div id="textOutputDiv">
+                <textarea id="realTextOutput" readonly>{{post_free.body}}</textarea>
+            </div>
+        </div>
+        <div class="footer">
+            <img id="homeIcon" class="moveIcon" src="../static/image/homeIcon.png" alt="homeIcon"/>
+            <img id="mapIcon" class="moveIcon" src="../static/image/mapIcon.png" alt="mapIcon"/>
+            <img id="infoBoardIcon" class="moveIcon" src="../static/image/infoBoardIcon.png" alt="infoBoardIcon"/>
+            <img id="freeBoardIcon" class="moveIcon" src="../static/image/freeBoardIcon.png" alt="freeBoardIcon"/>
+        </div>
+    </div>
+</body>
