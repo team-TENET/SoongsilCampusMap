@@ -54,3 +54,13 @@
   font-weight: 500;
   min-height:60vh
 }
+
+button{
+  border: none;
+  background: none;
+}
+
+button:focus{ 	
+  border: none;
+  outline:none;
+  }

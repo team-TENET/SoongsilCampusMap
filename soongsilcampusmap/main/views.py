@@ -12,7 +12,10 @@ def freeBoard(request):
     return render(request, 'freeBoard.html', {'posts_free':posts_free})
 
 def home(request):
-    return render(request, 'home.html')
+    posts = Post.objects.all()
+    posts_free = Post_free.objects.all()
+    return render(request, 'home.html', {'posts':posts, 'posts_free':posts_free})
+    # return render(request, 'home.html')
 
 def index(request):
     return render(request, 'index.html')
@@ -43,7 +46,7 @@ def create(request):
     new_post.title=request.POST['title']
     new_post.body=request.POST['body']
     new_post.pub_date= timezone.now()
-    new_post.author=request.user #바뀔부분
+    new_post.author=request.user
     new_post.save()
     return redirect('infoBoard')
 
@@ -55,7 +58,7 @@ def create_free(request):
     free_post.title=request.POST['title']
     free_post.body=request.POST['body']
     free_post.pub_date= timezone.now()
-    free_post.author=request.user #바뀔부분
+    free_post.author=request.user
     free_post.save()
     return redirect('freeBoard')
 

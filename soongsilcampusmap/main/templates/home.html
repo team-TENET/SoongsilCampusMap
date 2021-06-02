@@ -30,19 +30,15 @@
             <div class="boardPreviewDiv">
                 <ul class="boardPreviewList">
                     <li><h4 class="boardTitle">정보게시판</h4> <a href="{% url 'infoBoard' %}"><h4 class="boardMore">+</h4></a></li>
-                    <li><span class="postPreviewSpan">수강 신청 하기</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">학점 계산은 어떻게 해야할까</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">깔아야 하는 어플들</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">수업 드랍하는 법</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">수업 출석이 안되는 경우</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    {% for post in posts %}
+                        <li><span class="postPreviewSpan">{{post.title}}</span> <a href="{% url 'read' post.id %}"><img class="lookMore" src="../static/image/lookMore.png"></a></li>
+                    {% endfor %}
                 </ul>
                 <ul class="boardPreviewList">
                     <li><h4 class="boardTitle">자유게시판</h4> <a href="{% url 'freeBoard' %}"><h4 class="boardMore">+</h4></a></li>
-                    <li><span class="postPreviewSpan">개강 날짜</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">집에 가고싶다</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">네이버 지도 vs 카카오 지도</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">이 앱은</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
-                    <li><span class="postPreviewSpan">출석 체크가 이상해요</span> <img class="lookMore" src="../static/image/lookMore.png"></li>
+                    {% for post_free in posts_free %}
+                        <li><span class="postPreviewSpan">{{post_free.title}}</span> <a href="{% url 'read_free' post_free.id %}"><img class="lookMore" src="../static/image/lookMore.png"></a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
