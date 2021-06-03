@@ -47,6 +47,7 @@ def create(request):
     new_post.body=request.POST['body']
     new_post.pub_date= timezone.now()
     new_post.author=request.user
+    new_post.image = request.FILES['image']
     new_post.save()
     return redirect('infoBoard')
 
@@ -59,6 +60,7 @@ def create_free(request):
     free_post.body=request.POST['body']
     free_post.pub_date= timezone.now()
     free_post.author=request.user
+    free_post.image = request.FILES['image']
     free_post.save()
     return redirect('freeBoard')
 

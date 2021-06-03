@@ -27,7 +27,13 @@
                 </div>
             </div>
             <div id="textOutputDiv">
-                <textarea id="realTextOutput" readonly>{{post_free.body}}</textarea>
+                {% if post_free.image %}
+                        <p><img src="{{post_free.image.url}}" alt=""></p>
+                {% endif %}
+                    
+                {{post_free.body}}
+                
+                
             </div>
         </div>
         <div class="footer">

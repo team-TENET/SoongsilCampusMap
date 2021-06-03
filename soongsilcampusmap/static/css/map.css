@@ -1,0 +1,74 @@
+.contentMap {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 0%;
+  float: left;
+  background-color: white;
+  overflow-y: scroll;
+  z-index: 10;
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.contentMap::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+.infoMap {
+  float: left;
+  width: 100%;
+  height: 20%;
+  margin-top: 0.05%;
+  background-color: #ffffff8b;
+  z-index: 10000;
+  box-shadow: 0px -10px #cfcfcf;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.infoMap #markTitle {
+  float: left;
+  width: 100%;
+  padding: 2%;
+  height: 17%;
+  border-bottom: 1px solid #cfcfcf;
+}
+.infoMap #markName {
+  float: left;
+  color: black;
+  font-weight: bold;
+  font-size: large;
+  margin: 1%;
+}
+.infoMap #markType {
+  float: left;
+  color: #cfcfcf;
+  font-size: small;
+  margin: 1.5% 1%;
+}
+.infoMap #markContent {
+  padding: 3% 2%;
+  margin-top: 5%;
+}
+.infoMap #markInfo {
+  padding: 2%;
+  height: 50%;
+  margin-bottom: 10%;
+  color: #8c8c8c;
+  font-size: smaller;
+}
+.infoMap #markMemoDiv {
+  float: left;
+}
+.infoMap #markMemoLabel {
+  color: #858585;
+  float: left;
+  margin-top: -12%;
+  margin-left: 2%;
+}
+.infoMap #markMemo {
+  color: #a1a1a1;
+  width: 90%;
+  height: 80%;
+  min-height: 100px;
+  padding: 2%;
+  margin-left: 2%;
+  margin-top: -5.5%;
+  border: 1px solid #cfcfcf;
+}

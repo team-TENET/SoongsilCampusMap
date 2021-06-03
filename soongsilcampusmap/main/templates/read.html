@@ -27,7 +27,11 @@
                 </div>
             </div>
             <div id="textOutputDiv">
-                <textarea id="realTextOutput" readonly>{{post.body}}</textarea>
+                {% if post.image %}
+                        <p><img src="{{post.image.url}}" alt=""></p>
+                {% endif %}
+                    
+                {{post.body}}
             </div>
         </div>
         <div class="footer">

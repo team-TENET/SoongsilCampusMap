@@ -1,0 +1,17 @@
+$(document).ready(function(){
+    $('#homeIcon').click(function(){
+        window.location.href="./home";
+    })
+    $('#mapIcon').click(function(){
+        window.location.href="./map";
+    })
+    $('#infoBoardIcon').click(function(){
+        window.location.href="./infoBoard";
+    })
+    $('#freeBoardIcon').click(function(){
+        window.location.href="./freeBoard";
+    })
+    $('.backIcon').click(function(){
+        history.go(-1);
+    })
+})       
